@@ -36,8 +36,15 @@ $(document).ready(function () {
         var data = google.visualization.arrayToDataTable(values);
         var options = {
             title: 'Likelihood of Winning vs. Republican Candidate',
-            vAxis: {minValue: 0},
+            vAxis: {
+                minValue: 0,
+            },
             chartArea: {left: 25, width: '70%'},
+            legend: { position: "none" },
+            hAxis: {
+                textStyle: ($(window).width() < 580 ? {fontSize: 10} : {}),
+                slantedTextAngle: 60
+            }
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
