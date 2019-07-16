@@ -10,8 +10,6 @@ $(document).ready(function () {
     });
 
 
-    const titleTextStyle = { fontName: '', fontSize: 16, color: '#404040', italic: true, bold: false };
-
     // chart_div1
     // chart_div2
     const drawPieChart = (id, title) => (() => {
@@ -22,7 +20,6 @@ $(document).ready(function () {
 
         var options = {
             title,
-            titleTextStyle,
             is3D: true,
             chartArea: {left: 25, width: '70%'},
         };
@@ -39,7 +36,6 @@ $(document).ready(function () {
         var data = google.visualization.arrayToDataTable(values);
         var options = {
             title: 'Likelihood of Winning vs. Republican Candidate',
-            titleTextStyle,
             vAxis: {
                 minValue: 0,
             },
@@ -77,7 +73,6 @@ $(document).ready(function () {
 
         var options = {
             title,
-            titleTextStyle,
             chartArea: {left: 25, width: '55%'},
         };
 
