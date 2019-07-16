@@ -57,7 +57,7 @@ $(document).ready(function () {
             vAxis: {
                 minValue: 0,
             },
-            chartArea: {left: 25, width: '70%'},
+            chartArea: {left: 30, width: '70%'},
             legend: { position: "none" },
             hAxis: {
                 textStyle: ($(window).width() < 580 ? {fontSize: 10} : {}),
@@ -92,7 +92,7 @@ $(document).ready(function () {
         var options = {
             title,
             titleTextStyle,
-            chartArea: {left: 25, width: '55%'},
+            chartArea: {left: 30, width: '55%'},
             colors: candidates.map(c => cand_colors[c].color)
         };
 

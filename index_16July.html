@@ -14,7 +14,6 @@
     <style>
         #more {display: none;}
         #more2 {display: none;}
-        .moreBtn:focus, .moreBtn:active:focus  { outline: none }
         /*.lead {text-align: justify}*/
         /*#moreBtn {margin-right: 30px;}*/
     </style>
@@ -44,7 +43,7 @@
                             <span id="dots">...</span><span id="more"> 
                             <br>Betting sites allow people to place bets on their preferred candidate, and the odds change according to market demand. However, these odds include the house edge and risk premium, they differ slightly between sites, and they are presented as ratios, which are not always easy to understand. 
                             <br>The PresidentOdds.com model analyzes the odds from different sites, cleans the noise, and calculates the actual probabilities in percentages implied by the thousands of bets made every day. </span>
-                        <button class="btn btn-link moreBtn" onclick="toggleText()" id="moreBtn">More</button>
+                        <button class="btn btn-link" onclick="toggleText()" id="moreBtn">More</button>
                         <h2>Who will be elected the next President of the US in 2020?</h2>
                         </div>
                         <script>
@@ -88,7 +87,7 @@
                 <br>These results are calculated by dividing the likelihood that the candidate becomes President by the likelihood that the candidate becomes the Democratic nominee. This works since a candidate who became president must have previously won their party’s nomination. 
                 <br>Since (% wins Democratic nomination) * (% wins on Presidential ballot) = (overall likelihood of becoming President), therefore (% wins on Presidential ballot) = (overall likelihood of becoming President) / (% wins Democratic nomination). 
                 <br>Estimates are removed when candidate odds are too low for a reliable calculation.</span>
-                <button class="btn btn-link moreBtn" onclick="toggleText2()" id="moreBtn2">More</button>
+                <button class="btn btn-link" onclick="toggleText2()" id="moreBtn2">More</button>
             <script>
                     function toggleText2() {
                         var dots2 = document.getElementById("dots2");
