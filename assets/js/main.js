@@ -46,28 +46,28 @@ $(document).ready(function () {
         chart.draw(data, options);
     });
 
-    // chart_div3
-    const drawChart3 = () => {
-        var chart_data = $.map(chart_3_data, (v, k) => ([[k, v, Math.floor(v) + '%', cand_colors[k].color]]));
-        var values = [['Name', 'Result ' + '%', {role: 'annotation'}, {role: 'style'}]].concat(chart_data);
-        var data = google.visualization.arrayToDataTable(values);
-        var options = {
-            title: 'Likelihood of Winning vs. Republican Candidate',
-            titleTextStyle,
-            vAxis: {
-                minValue: 0,
-            },
-            chartArea: {left: 30, width: '70%'},
-            legend: { position: "none" },
-            hAxis: {
-                textStyle: ($(window).width() < 580 ? {fontSize: 10} : {}),
-                slantedTextAngle: 60
-            }
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
-        chart.draw(data, options);
-    };
+    // // chart_div3
+    // const drawChart3 = () => {
+    //     var chart_data = $.map(chart_3_data, (v, k) => ([[k, v, Math.floor(v) + '%', cand_colors[k].color]]));
+    //     var values = [['Name', 'Result ' + '%', {role: 'annotation'}, {role: 'style'}]].concat(chart_data);
+    //     var data = google.visualization.arrayToDataTable(values);
+    //     var options = {
+    //         title: 'Likelihood of Winning vs. Republican Candidate',
+    //         titleTextStyle,
+    //         vAxis: {
+    //             minValue: 0,
+    //         },
+    //         chartArea: {left: 30, width: '70%'},
+    //         legend: { position: "none" },
+    //         hAxis: {
+    //             textStyle: ($(window).width() < 580 ? {fontSize: 10} : {}),
+    //             slantedTextAngle: 60
+    //         }
+    //     };
+    //
+    //     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+    //     chart.draw(data, options);
+    // };
 
 
     // chart_div1history
@@ -104,10 +104,10 @@ $(document).ready(function () {
         google.setOnLoadCallback(drawPieChart(1, 'Chances of Winning 2020 Election, based on odds from different betting websites',
             function() {
                 google.setOnLoadCallback(drawPieChart(2, 'Chances of Being 2020 Democratic Candidate, based on odds from different betting websites'));
-                google.setOnLoadCallback(drawChart3);
+                // google.setOnLoadCallback(drawChart3);
                 google.setOnLoadCallback(drawChartHist(1, 'Chances of Winning 2020 Election over time'));
                 google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
-                google.setOnLoadCallback(drawChartHist(3, 'Winning vs. republican candidate nominee likelihood over time'));
+                // google.setOnLoadCallback(drawChartHist(3, 'Winning vs. republican candidate nominee likelihood over time'));
             }
         ));
     }
