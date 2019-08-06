@@ -31,7 +31,7 @@ $(document).ready(function () {
         });
     };
 
-    const titleTextStyle = { fontName: 'Lora, serif', fontSize: 16, color: '#333', italic: false, bold: false };
+    const titleTextStyle = { fontName: '', fontSize: 16, color: '#333', italic: true, bold: false };
 
     // chart_div1
     // chart_div2
