@@ -101,11 +101,11 @@ $(document).ready(function () {
     });
 
     function buildCharts() {
-        google.setOnLoadCallback(drawPieChart(1, 'Chances of Winning 2020 Election, based on analysis of odds from different betting websites',
+        google.setOnLoadCallback(drawPieChart(1, 'Chances of winning 2020 election, based on analysis of odds from different betting websites',
             function() {
-                google.setOnLoadCallback(drawPieChart(2, 'Chances of Being 2020 Democratic Candidate, based on analysis of odds from different betting websites'));
+                google.setOnLoadCallback(drawPieChart(2, 'Chances of becoming 2020 Democratic candidate, based on analysis of odds from different betting websites'));
                 // google.setOnLoadCallback(drawChart3);
-                google.setOnLoadCallback(drawChartHist(1, 'Chances of Winning 2020 Election over time'));
+                google.setOnLoadCallback(drawChartHist(1, 'Chances of winning 2020 election over time'));
                 google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
                 // google.setOnLoadCallback(drawChartHist(3, 'Winning vs. republican candidate nominee likelihood over time'));
             }
