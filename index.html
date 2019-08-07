@@ -15,8 +15,6 @@
         #more {display: none;}
         #more2 {display: none;}
         .moreBtn:focus, .moreBtn:active:focus  { outline: none }
-        /*.lead {text-align: justify}*/
-        /*#moreBtn {margin-right: 30px;}*/
     </style>
 </head>
 
@@ -25,7 +23,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-<!--                    <img src="assets/imgs/2020e.jpg" alt="election logo">-->
                     <h1>Next US President Probabilities</h1>
                 </div>
             </div>
@@ -47,27 +44,15 @@
                                 <br>Betting sites allow people to place bets on their preferred candidate, and the odds change according to market demand. However, these odds include the house edge and risk premium, they differ slightly between sites, and they are presented as ratios, which are not always easy to understand.
                                 <br>The PresidentOdds.com model analyzes the odds from different sites, cleans the noise, and calculates the actual probabilities in percentages implied by the thousands of bets made every day.
                             </span>
-                            <button class="btn btn-link moreBtn" onclick="toggleText()" id="moreBtn">More</button>
-                            <h2>Who will be elected the next President of the US in 2020?</h2>
+                            <a class="moreBtn" href="#" onclick="toggleText()" id="moreBtn">More »</a>
                         </div>
-                        <script>
-                            function toggleText() {
-                                var dots = document.getElementById("dots");
-                                var moreText = document.getElementById("more");
-                                var btnText = document.getElementById("moreBtn");
-                                if (dots.style.display === "none") {
-                                    dots.style.display = "inline";
-                                    btnText.innerHTML = "More";
-                                    moreText.style.display = "none";
-                                } else {
-                                    dots.style.display = "none";
-                                    btnText.innerHTML = "Less";
-                                    moreText.style.display = "inline";
-                                }
-                            }
-                        </script>
                         <div style="clear: both"></div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Who will be elected the next President of the US in 2020?</h2>
                 </div>
             </div>
             <div class="row">
@@ -96,42 +81,6 @@
                     Due to the small betting volume at this early stage, percentages for Democratic nominee are currently derived from the overall odds for President.
                 </div>
             </div>
-
-
-<!--            <div class="row">-->
-<!--                <div class="col-md-12">-->
-<!--                    <h2>Who can win the Presidential election?</h2>-->
-<!--                    The following chart displays the likelihood of each democratic candidate winning the general election in 2020, assuming they won in the Democratic primaries<span id="dots2">...</span><span id="more2">-->
-<!--                    <br>These results are calculated by dividing the likelihood that the candidate becomes President by the likelihood that the candidate becomes the Democratic nominee. This works since a candidate who became president must have previously won their party’s nomination.-->
-<!--                    <br>Since (% wins Democratic nomination) * (% wins on Presidential ballot) = (overall likelihood of becoming President), therefore (% wins on Presidential ballot) = (overall likelihood of becoming President) / (% wins Democratic nomination).-->
-<!--                    <br>Estimates are removed when candidate odds are too low for a reliable calculation.</span>-->
-<!--                    <button class="btn btn-link moreBtn" onclick="toggleText2()" id="moreBtn2">More</button>-->
-<!--                    <script>-->
-<!--                        function toggleText2() {-->
-<!--                            var dots2 = document.getElementById("dots2");-->
-<!--                            var moreText2 = document.getElementById("more2");-->
-<!--                            var btnText2 = document.getElementById("moreBtn2");-->
-<!--                            if (dots2.style.display === "none") {-->
-<!--                                dots2.style.display = "inline";-->
-<!--                                btnText2.innerHTML = "More";-->
-<!--                                moreText2.style.display = "none";-->
-<!--                            } else {-->
-<!--                                dots2.style.display = "none";-->
-<!--                                btnText2.innerHTML = "Less";-->
-<!--                                moreText2.style.display = "inline";-->
-<!--                            }-->
-<!--                        }-->
-<!--                    </script>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-6">-->
-<!--                    <div id="chart_div3" class="chart"></div>-->
-<!--                </div>-->
-<!--                <div class="col-md-6">-->
-<!--                    <div id="chart_div3history" class="chart"></div>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </main>
     <footer>
@@ -151,7 +100,6 @@
 
     <script src="assets/data/chart_1.js"></script>
     <script src="assets/data/chart_2.js"></script>
-<!--    <script src="assets/data/chart_3.js"></script>-->
 
     <script src="assets/js/main.js"></script>
 

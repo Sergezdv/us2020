@@ -1,7 +1,17 @@
-header img {
-  float: left;
-  width: 80px;
+body {
+  font-family: Lora, serif;
+  color: #333;
+  font-size: 16px;
 }
+
+.lead .moreBtn {
+  color: #1559b5;
+}
+
+.moreBtn:hover, .moreBtn:focus {
+  text-decoration: none;
+}
+
 
 .chart {
   width: 100%;
@@ -10,6 +20,11 @@ header img {
 
 footer {
   margin: 60px 0px 0px;
-  background: rgb(214, 214, 214);
+  /*background: rgb(214, 214, 214);*/
   min-height: 40px;
+
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 13px;
+  background: #1c1d1f;
+  color: #8d8e90;
 }
