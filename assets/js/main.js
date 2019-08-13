@@ -18,6 +18,8 @@ function toggleText() {
 }
 
 $(document).ready(function () {
+    if (typeof chart_1_data === 'undefined') { $('head').append('<script src="assets/data/chart_1.js"></script>') } //fallback
+    if (typeof chart_2_data === 'undefined') { $('head').append('<script src="assets/data/chart_2.js"></script>') } //fallback
 
     google.charts.load('current', {
         'packages': ['corechart']
