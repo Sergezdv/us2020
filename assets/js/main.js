@@ -14,7 +14,7 @@ function toggleText() {
         dots.style.display = "none";
         btnText.innerHTML = "Less";
         moreText.style.display = "inline";
-        gtag('event', 'click', { 'show_more': 'top_probabilities_text' });
+        gtag('event', 'click_on_more', { 'probabilities_text': 'index_top' });
     }
 }
 
