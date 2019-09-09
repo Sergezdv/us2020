@@ -73,7 +73,7 @@ $(document).ready(function () {
         candidates.forEach(cand => data.addColumn('number', cand));
 
         $.each(chart_history_data, (date, vals) => {
-            var dataRow = [new Date(date)];
+            var dataRow = [new Date(date.replace(/-/g, "/"))]; //replace - fix for safari
             candidates.forEach(cand => dataRow.push(vals[cand]));
             data.addRow(dataRow);
         });
