@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <script>
+        if (/http:\/\/(www\.)*presidentodds\.com\//.test(window.location.href)) {
+            window.location.replace("https://www.presidentodds.com/");
+        } else if (window.location.protocol === 'http:' && !window.location.href.includes('localhost')) {
+            window.location.protocol = 'https:'
+        }
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQRD9XL4ZS"></script>
     <script>
