@@ -2,6 +2,10 @@ Array.prototype.uniq = function () {
     return [...new Set(this)]
 };
 
+Array.prototype.sample = function () {
+    return this[Math.floor(Math.random() * this.length)]
+};
+
 function toggleText() {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
@@ -18,6 +22,28 @@ function toggleText() {
     }
 }
 
+const colors = [
+    ['#3366CC', '#264d99'],
+    ['#DC3912', '#a52b0e'],
+    ['#FF9900', '#bf7300'],
+    ['#109618', '#0c7112'],
+    ['#990099', '#730073'],
+    ['#0099C6', '#007395'],
+    ['#DD4477', '#a63359'],
+    ['#66AA00', '#4d8000'],
+    ['#B82E2E', '#8a2323'],
+    ['#316395', '#254a70'],
+    ['#994499', '#733373'],
+    ['#22AA99', '#1a8073'],
+    ['#AAAA11', '#80800d'],
+    ['#6633CC', '#4d2699'],
+    ['#E67300', '#ad5600'],
+    ['#8B0707', '#680505'],
+    ['#329262', '#266e4a'],
+    ['#5574A6', '#40577d'],
+    ['#3B3EAC', '#2c2f81']
+];
+
 $(document).ready(function () {
     if (typeof chart_1_data === 'undefined') { $('head').append('<script src="assets/data/chart_1.js"></script>') } //fallback
     if (typeof chart_2_data === 'undefined') { $('head').append('<script src="assets/data/chart_2.js"></script>') } //fallback
@@ -26,13 +52,11 @@ $(document).ready(function () {
         'packages': ['corechart']
     });
 
-    let firstChart;
     const cand_colors = {};
-    const get_cand_colors = () => {
-        firstChart.ba.ia.F.forEach(p => {
-            cand_colors[p.title] = {color: p.color.color, darker: p.color.wb}
-        });
-    };
+    Object.keys(chart_1_data).forEach((k, i) => {
+        const cc = colors[i] || colors.sample();
+        cand_colors[k] = { color: cc[0], darker: cc[1] }
+    } );
 
     const titleTextStyle = { fontName: '', fontSize: 16, color: '#333', italic: true, bold: false };
 
@@ -49,17 +73,10 @@ $(document).ready(function () {
             titleTextStyle,
             is3D: true,
             chartArea: {left: 25, width: '70%'},
+            colors: Object.keys(chart_data0).map(c => cand_colors[c])
         };
 
         var chart = new google.visualization.PieChart(document.getElementById(`chart_div${id}`));
-
-        if (id === 1) {
-            firstChart = chart;
-            google.visualization.events.addListener(chart, 'ready', () => { get_cand_colors(); cb(); })
-        } else {
-            options.colors = Object.keys(chart_data0).map(c => cand_colors[c])
-        }
-
         chart.draw(data, options);
     });
 
@@ -91,17 +108,12 @@ $(document).ready(function () {
     });
 
     function buildCharts() {
-        google.setOnLoadCallback(drawPieChart(1, 'Chances of winning 2020 election, based on analysis of odds from different betting websites',
-            function() {
-                google.setOnLoadCallback(drawPieChart(2, 'Chances of becoming 2020 Democratic candidate, based on analysis of odds from different betting websites'));
-                google.setOnLoadCallback(drawChartHist(1, 'Chances of winning 2020 election over time'));
-                google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
-            }
-        ));
+        google.setOnLoadCallback(drawPieChart(1, 'Chances of winning 2020 election, based on analysis of odds from different betting websites'));
+        google.setOnLoadCallback(drawPieChart(2, 'Chances of becoming 2020 Democratic candidate, based on analysis of odds from different betting websites'));
+        google.setOnLoadCallback(drawChartHist(1, 'Chances of winning 2020 election over time'));
+        google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
     }
-
     buildCharts();
-
     $(window).resize(buildCharts);
 
 
