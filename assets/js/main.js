@@ -110,8 +110,8 @@ $(document).ready(function () {
     function buildCharts() {
         google.setOnLoadCallback(drawPieChart(1, 'Chances of winning 2020 election, based on analysis of odds from different betting websites'));
         google.setOnLoadCallback(drawPieChart(2, 'Chances of becoming 2020 Democratic candidate, based on analysis of odds from different betting websites'));
-        google.setOnLoadCallback(drawChartHist(1, 'Chances of winning 2020 election over time'));
-        google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
+        // google.setOnLoadCallback(drawChartHist(1, 'Chances of winning 2020 election over time'));
+        // google.setOnLoadCallback(drawChartHist(2, 'Democratic nominee likelihood over time'));
     }
     buildCharts();
     $(window).resize(buildCharts);
